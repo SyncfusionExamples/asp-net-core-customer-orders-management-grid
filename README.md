@@ -3,7 +3,7 @@
 
 ## Overview
 [](https://github.com/SyncfusionExamples/asp-net-core-customer-orders-management-grid#overview)
-This sample demonstrates how to build a customer orders management view in an ASP.NET Core Razor Pages application using the Syncfusion Data Grid component. The grid is bound directly to a local collection of strongly typed `Order` records provided by the page model — no controller, repository, or remote data adaptor is involved. The sample covers local data binding, filter bar filtering, toolbar-driven inline editing (Add, Edit, Delete), and exporting the grid content to Excel and PDF.
+This sample demonstrates how to build a customer orders management view in an ASP.NET Core Razor Pages application using the Syncfusion Data Grid component. The grid is bound directly to a local collection of strongly typed `Order` records provided by the page model. The sample covers local data binding, filter bar filtering, toolbar-driven inline editing (Add, Edit, Delete), and exporting the grid content to Excel and PDF.
 
 ## Key Features
 [](https://github.com/SyncfusionExamples/asp-net-core-customer-orders-management-grid#key-features)
