@@ -20,7 +20,7 @@ A sample ASP.NET Core Razor Pages application that demonstrates how to build a f
 Above the grid the page renders:
 
 1. **`<h1>`** — "ASP.NET Core with Grid Component" with a subtitle describing the demo.
-2. **`<p>`** — six feature cards (filtering, inline editing, Excel export, PDF export).
+2. **`<p>`** — four feature (filtering, inline editing, Excel export, PDF export).
 
 > **Note:** Application styles are used for demo purposes; you can customize them based on your need. All demo styles live in [`wwwroot/css/site.css`](wwwroot/css/site.css).
 
