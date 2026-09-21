@@ -1,182 +1,67 @@
-# Customer Orders Management
+# ASP.NET Core Grid - Customer Orders Management
+[](https://github.com/SyncfusionExamples/asp-net-core-customer-orders-management-grid#aspnet-core-grid---customer-orders-management)
 
-A sample ASP.NET Core Razor Pages application that demonstrates how to build a fully interactive, exportable, and visually rich data grid with **Syncfusion ASP.NET Core Grid** — without any controller or repository layer. Data is bound directly to the Grid from the Razor Page model.
+## Overview
+[](https://github.com/SyncfusionExamples/asp-net-core-customer-orders-management-grid#overview)
+This sample demonstrates how to build a customer orders management view in an ASP.NET Core Razor Pages application using the Syncfusion Data Grid component. The grid is bound directly to a local collection of strongly typed `Order` records provided by the page model — no controller, repository, or remote data adaptor is involved. The sample covers local data binding, filter bar filtering, toolbar-driven inline editing (Add, Edit, Delete), and exporting the grid content to Excel and PDF.
 
-> **Tech stack:** .NET 10 · ASP.NET Core · Razor Pages · Syncfusion.AspNetCore.Grid 34.2.x · Syncfusion.AspNetCore.Themes 34.2.x · Bootstrap 5
+## Key Features
+[](https://github.com/SyncfusionExamples/asp-net-core-customer-orders-management-grid#key-features)
 
----
+- Uses the Syncfusion ASP.NET Core Data Grid (`ejs-grid` tag helper) as the primary data presentation component.
+- Binds the grid to a `List<Order>` from the Razor Pages page model via `dataSource="@Model.Orders"`, demonstrating direct local data binding.
+- Enables filter bar filtering to quickly narrow down orders by any column.
+- Provides inline editing with `Add`, `Edit`, `Delete`, `Update`, and `Cancel` toolbar commands, with `OrderID` set as the primary key column.
+- Exports grid data to Excel and PDF using the built-in `ExcelExport` and `PdfExport` toolbar items.
+- Uses a strongly typed `Order` model with data-annotation validation, a computed **Total Amount** column (`Quantity × Price`), currency (`C2`) and date (`yMd`) column formats, and a dropdown editor for order status.
+- References the `Syncfusion.AspNetCore.Grid` and `Syncfusion.AspNetCore.Themes` NuGet packages, with Syncfusion tag helpers registered in `Pages/_ViewImports.cshtml` and the Fluent theme, Grid script, and `ejs-scripts` manager wired up in the shared layout.
 
-## ✨ Features
+## Prerequisites
+[](https://github.com/SyncfusionExamples/asp-net-core-customer-orders-management-grid#prerequisites)
 
-- **Full CRUD** — Add, edit, delete, and inline-update orders directly inside the grid.
-- **Filtering ** — Excel-like `FilterBar`.
-- **Excel & PDF export** — Export visible (or all) rows to `.xlsx` or `.pdf` with one click.
-- **Hero section + feature list** — An `<h1>` title and a responsive `<p>` of feature describe what the grid supports at a glance.
+- .NET 10.0 SDK
+- Visual Studio 2026 or Visual Studio Code
 
----
+## How to Run the Project
+[](https://github.com/SyncfusionExamples/asp-net-core-customer-orders-management-grid#how-to-run-the-project)
 
-## 🖼️ Page structure
+**Visual Studio 2026**
 
-Above the grid the page renders:
+1. Clone or download this repository.
+2. Open `CustomerOrdersManagement.slnx` in Visual Studio 2026.
+3. Restore the NuGet packages.
+4. Build the solution.
+5. Run the application.
+6. Navigate to the home page that hosts the Syncfusion Data Grid sample.
+7. Try filtering, adding, editing, or deleting orders from the grid toolbar, and export the results to Excel or PDF.
 
-1. **`<h1>`** — "ASP.NET Core with Grid Component" with a subtitle describing the demo.
-2. **`<p>`** — four feature (filtering, inline editing, Excel export, PDF export).
+**Visual Studio Code**
 
-> **Note:** Application styles are used for demo purposes; you can customize them based on your need. All demo styles live in [`wwwroot/css/site.css`](wwwroot/css/site.css).
-
----
-
-## 📁 Project structure
+1. Open the repository folder in Visual Studio Code.
+2. Open the integrated terminal.
+3. Navigate to the project directory.
 
 ```
-CustomerOrdersManagement/
-├── CustomerOrdersManagement.csproj   # NuGet refs + TargetFramework
-├── Program.cs                        # Razor Pages startup (no Syncfusion DI needed)
-├── appsettings.json / .Development.json
-├── Models/
-│   └── Order.cs                      # POCO with validation attributes + computed TotalAmount
-├── Pages/
-│   ├── Index.cshtml                  # The grid markup + toolbar/click
-│   ├── Index.cshtml.cs               # Seeds 20 deterministic sample orders
-│   ├── Privacy.cshtml(.cs)           # Boilerplate privacy page
-│   ├── Error.cshtml(.cs)             # Boilerplate error page
-│   ├── _ViewImports.cshtml           # Adds Syncfusion.AspNetCore.* tag helpers
-│   ├── _ViewStart.cshtml
-│   └── Shared/
-│       └── _Layout.cshtml            # Loads EJ2 styles/scripts from NuGet _content/ + <ejs-scripts>
-├── wwwroot/
-│   └── css/site.css                  # Layout + cell-coloring + status-pill styles
-└── Properties/launchSettings.json
-```
-
----
-
-## 🚀 Getting started
-
-### Prerequisites
-
-- [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0)
-- A modern browser (Chrome / Edge / Firefox / Safari)
-
-### Run
-
-```bash
-git clone <your-repo-url>
-cd CustomerOrdersManagement
 dotnet restore
 dotnet run
 ```
 
-Open `https://localhost:5001` (or whichever port `launchSettings.json` specifies).
+## Project Structure
+[](https://github.com/SyncfusionExamples/asp-net-core-customer-orders-management-grid#project-structure)
 
-> To register a Syncfusion license (Community License or commercial), add the following to the top of `Program.cs`:
->
-> ```csharp
-> Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("YOUR-LICENSE-KEY");
-> ```
->
-> **Note:** The `Syncfusion.Licensing` assembly ships transitively with `Syncfusion.AspNetCore.Grid`, so no extra package is required.
+- `Pages/` — Contains the Razor Pages that host the Syncfusion Data Grid sample, including the page model that supplies the order records.
+- `Pages/Shared/` — Contains `_Layout.cshtml`, which loads the Syncfusion theme stylesheet, the Grid component script, and the `ejs-scripts` script manager.
+- `Models/` — Contains the `Order` data model and `OrderStatus` constants used to populate the grid.
+- `Program.cs` — Configures application services and the request pipeline for the Razor Pages application.
+- `wwwroot/` — Contains static assets (CSS, JavaScript, and client libraries) used by the application.
 
----
+## Support and Feedback
+[](https://github.com/SyncfusionExamples/asp-net-core-customer-orders-management-grid#support-and-feedback)
 
-## 🧩 How the grid is wired (split packages, v34.2.x)
+- For general product questions, visit the [Syncfusion Community Forum](https://www.syncfusion.com/forums) or [Syncfusion Support](https://www.syncfusion.com/support).
+- To report an issue specific to this sample, open a GitHub issue in this repository.
+- For ASP.NET Core Grid data binding documentation, see: [https://help.syncfusion.com/aspnet-core/grid/data-binding](https://help.syncfusion.com/aspnet-core/grid/data-binding)
 
-Starting with Syncfusion v34.2, the monolithic `Syncfusion.EJ2.AspNet.Core` package has been split into per-control packages. This project uses **two** of them:
-
-### NuGet references — `CustomerOrdersManagement.csproj`
-
-```xml
-<ItemGroup>
-    <PackageReference Include="Syncfusion.AspNetCore.Grid"   Version="*" />
-    <PackageReference Include="Syncfusion.AspNetCore.Themes" Version="*" />
-</ItemGroup>
-```
-
-The `*` floating version lets `dotnet restore` pick the latest 34.2.x patch. Pin to a specific version (e.g. `34.2.8`) in production.
-
-### Tag helpers — `Pages/_ViewImports.cshtml`
-
-```csharp
-@using CustomerOrdersManagement
-@using CustomerOrdersManagement.Models
-@namespace CustomerOrdersManagement.Pages
-@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-
-@* Syncfusion split-package tag helpers (v34.2+) *@
-@addTagHelper *, Syncfusion.AspNetCore.Base
-@addTagHelper *, Syncfusion.AspNetCore.Grid
-```
-
-### Stylesheet & scripts — `Pages/Shared/_Layout.cshtml`
-
-Static web assets are served from the NuGet packages via the `_content/` path. **Do not** reference the Syncfusion CDN — the static assets ship inside the NuGet package, and a CDN reference would skip them entirely.
-
-```html
-<head>
-    ...
-    <link rel="stylesheet"
-          href="_content/Syncfusion.AspNetCore.Themes/styles/fluent2.css" />
-    <script src="_content/Syncfusion.AspNetCore.Grid/scripts/sf-grid.min.js"></script>
-</head>
-<body>
-    ...
-
-    <!-- Syncfusion Script Manager — emits the per-page client-side init script. -->
-    <ejs-scripts></ejs-scripts>
-
-    @await RenderSectionAsync("Scripts", required: false)
-</body>
-```
-
-### The grid itself — `Pages/Index.cshtml`
-
-```csharp
-<ejs-grid id="OrdersGrid"
-          dataSource="@Model.Orders"
-          allowFiltering="true"
-          allowExcelExport="true"
-          allowPdfExport="true"
-          toolbarClick="toolbarClick"
-          toolbar="@(new List<string> {
-              "Add", "Edit", "Delete", "Update", "Cancel",
-              "ExcelExport", "PdfExport" })">
-    <e-grid-filtersettings type="FilterBar"></e-grid-filtersettings>
-    <e-grid-editSettings allowAdding="true"
-                         allowEditing="true"
-                         allowDeleting="true"
-                         mode="Normal"></e-grid-editSettings>
-    <e-grid-columns>
-        <e-grid-column field="OrderID"      headerText="Order ID"      isPrimaryKey="true" width="110" textAlign="Center"></e-grid-column>
-        <e-grid-column field="CustomerName" headerText="Customer Name" width="160" validationRules="@(new { required = true })"></e-grid-column>
-        <e-grid-column field="Product"      headerText="Product"       width="170"></e-grid-column>
-        <e-grid-column field="Quantity"     headerText="Quantity"      width="110" editType="NumericTextBox" textAlign="Right"></e-grid-column>
-        <e-grid-column field="Price"        headerText="Unit Price"    width="130" format="C2" editType="NumericTextBox" textAlign="Right"></e-grid-column>
-        <e-grid-column field="TotalAmount"  headerText="Total"         width="140" format="C2" textAlign="Right" allowEditing="false"></e-grid-column>
-        <e-grid-column field="OrderDate"    headerText="Order Date"    width="140" format="yMd" type="Date" editType="DatePicker" textAlign="Center"></e-grid-column>
-        <e-grid-column field="Status"       headerText="Status"        width="150" editType="DropdownEdit" textAlign="Center"></e-grid-column>
-    </e-grid-columns>
-</ejs-grid>
-```
-
-### Export handlers
-
-```javascript
-function toolbarClick(args) {
-    var grid = document.getElementById("OrdersGrid").ej2_instances[0];
-    if (args.item.id === 'OrdersGrid_pdfexport')  grid.pdfExport();
-    if (args.item.id === 'OrdersGrid_excelexport') grid.excelExport();
-}
-```
-
-## 🧪 Try it out
-
-1. Run the project (`dotnet run`).
-2. Use the **ExcelExport** / **PdfExport** toolbar buttons to download the grid.
-3. Click the **+** toolbar button (Add) to insert a new row; double-click a row to edit; click the trash icon to delete.
-4. Notice how `Quantity`, `Price`, `TotalAmount`, and `OrderDate` cells are color-coded, and how the `Status` column shows colored pills with row-edge tints.
-
----
-
-## 📝 License
-
-This sample is provided as-is for demonstration purposes. Syncfusion is commercial software; see [Syncfusion's licensing terms](https://www.syncfusion.com/sales/communitylicense) for Community License eligibility.
+## License
+[](https://github.com/SyncfusionExamples/asp-net-core-customer-orders-management-grid#license)
+This is a Syncfusion sample project provided to demonstrate product usage. Review the [Syncfusion license terms](https://www.syncfusion.com/sales/pricing?category=ui-components) before using Syncfusion components in your own applications.
