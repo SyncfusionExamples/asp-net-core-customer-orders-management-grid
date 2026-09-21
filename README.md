@@ -46,15 +46,6 @@ dotnet restore
 dotnet run
 ```
 
-## Project Structure
-[](https://github.com/SyncfusionExamples/asp-net-core-customer-orders-management-grid#project-structure)
-
-- `Pages/` — Contains the Razor Pages that host the Syncfusion Data Grid sample, including the page model that supplies the order records.
-- `Pages/Shared/` — Contains `_Layout.cshtml`, which loads the Syncfusion theme stylesheet, the Grid component script, and the `ejs-scripts` script manager.
-- `Models/` — Contains the `Order` data model and `OrderStatus` constants used to populate the grid.
-- `Program.cs` — Configures application services and the request pipeline for the Razor Pages application.
-- `wwwroot/` — Contains static assets (CSS, JavaScript, and client libraries) used by the application.
-
 ## Support and Feedback
 [](https://github.com/SyncfusionExamples/asp-net-core-customer-orders-management-grid#support-and-feedback)
 
