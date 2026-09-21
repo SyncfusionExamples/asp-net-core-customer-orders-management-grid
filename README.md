@@ -60,7 +60,7 @@ dotnet run
 
 - For general product questions, visit the [Syncfusion Community Forum](https://www.syncfusion.com/forums) or [Syncfusion Support](https://www.syncfusion.com/support).
 - To report an issue specific to this sample, open a GitHub issue in this repository.
-- For ASP.NET Core Grid data binding documentation, see: [https://help.syncfusion.com/aspnet-core/grid/data-binding](https://help.syncfusion.com/aspnet-core/grid/data-binding)
+- For ASP.NET Core DataGrid documentation, see: [https://help.syncfusion.com/aspnet-core/grid/getting-started](https://help.syncfusion.com/aspnet-core/grid/getting-started)
 
 ## License
 [](https://github.com/SyncfusionExamples/asp-net-core-customer-orders-management-grid#license)
