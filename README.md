@@ -128,18 +128,6 @@ Static web assets are served from the NuGet packages via the `_content/` path. *
 </body>
 ```
 
-### Service registration — `Program.cs`
-
-The split packages do **not** require any service registration. `Program.cs` is the standard Razor Pages startup:
-
-```csharp
-var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddRazorPages();
-
-var app = builder.Build();
-// ...standard middleware (UseHttpsRedirection, UseRouting, MapStaticAssets, MapRazorPages)
-app.Run();
-```
 ### The grid itself — `Pages/Index.cshtml`
 
 ```csharp
@@ -179,18 +167,6 @@ function toolbarClick(args) {
     if (args.item.id === 'OrdersGrid_excelexport') grid.excelExport();
 }
 ```
-
-## ⚠️ Common pitfalls when migrating from the monolithic package
-
-If you previously used `Syncfusion.EJ2.AspNet.Core`, the following must change:
-
-| Old (≤ v34.1)                                       | New (≥ v34.2)                                          |
-|-----------------------------------------------------|--------------------------------------------------------|
-| `<PackageReference Include="Syncfusion.EJ2.AspNet.Core" Version="..." />` | `Syncfusion.AspNetCore.Grid` + `Syncfusion.AspNetCore.Themes` |
-| `@addTagHelper *, Syncfusion.EJ2`                   | `@addTagHelper *, Syncfusion.AspNetCore.Base`<br>`@addTagHelper *, Syncfusion.AspNetCore.Grid` |
-| `https://cdn.syncfusion.com/ej2/<ver>/dist/ej2.min.js` | `_content/Syncfusion.AspNetCore.Grid/scripts/sf-grid.min.js` |
-| `https://cdn.syncfusion.com/ej2/<ver>/fluent2.css` | `_content/Syncfusion.AspNetCore.Themes/styles/fluent2.css` |
-| `builder.Services.AddSyncfusionScriptManager()`     | **(removed)** — not present in the split packages; use `<ejs-scripts></ejs-scripts>` in the layout instead |
 
 ## 🧪 Try it out
 
