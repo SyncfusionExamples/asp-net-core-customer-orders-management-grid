@@ -1,0 +1,54 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Customer Orders";
+}
+
+<h1 class="grid-page-title">
+    ASP.NET Core with Grid Component
+</h1>
+
+<p class="feature-line">
+    <strong>Features enabled:</strong>
+    <span class="chip chip-filter">🔍 Filtering</span>
+    <span class="chip chip-edit">✏️ Inline Editing</span>
+    <span class="chip chip-excel">📊 Excel Export</span>
+    <span class="chip chip-pdf">📄 PDF Export</span>
+</p>
+
+
+<div class="grid-wrapper">
+    <ejs-grid id="OrdersGrid"
+               height="400"
+               width="1200"
+               dataSource="@Model.Orders"
+               allowFiltering="true"
+               allowExcelExport="true"
+               allowPdfExport="true"
+               toolbarClick="toolbarClick"
+               toolbar="@(new List<string> { "Add", "Edit", "Delete", "Update", "Cancel", "ExcelExport", "PdfExport" })">
+        <e-grid-filtersettings type="FilterBar"></e-grid-filtersettings>
+        <e-grid-editSettings allowAdding="true" allowEditing="true" allowDeleting="true" mode="Normal"></e-grid-editSettings>
+        <e-grid-columns>
+            <e-grid-column field="OrderID"      headerText="ID"           isPrimaryKey="true" minWidth="80"  width="100"  textAlign="Center"></e-grid-column>
+            <e-grid-column field="CustomerName" headerText="Customer"     minWidth="90" width="100" validationRules="@(new { required = true })"></e-grid-column>
+            <e-grid-column field="Product"      headerText="Product"      minWidth="80" width="100"></e-grid-column>
+            <e-grid-column field="Quantity"     headerText="Qty"          minWidth="90"  width="100" editType="NumericTextBox" textAlign="Right"></e-grid-column>
+            <e-grid-column field="Price" headerText="Unit Price" minWidth="90" width="100" format="C2" editType="NumericTextBox" textAlign="Right"></e-grid-column>
+            <e-grid-column field="TotalAmount" headerText="Total" minWidth="90" width="100" format="C2" textAlign="Right" allowEditing="false"></e-grid-column>
+            <e-grid-column field="OrderDate" headerText="Order Date" minWidth="90" width="100" format="yMd" type="Date" editType="DatePicker" textAlign="Center"></e-grid-column>
+            <e-grid-column field="Status" headerText="Status" minWidth="90" width="100" editType="DropdownEdit" textAlign="Center"></e-grid-column>
+        </e-grid-columns>
+    </ejs-grid>
+</div>
+<script>
+    function toolbarClick(args) {
+        var grid = document.getElementById("OrdersGrid").ej2_instances[0];
+        if (args.item.id === 'OrdersGrid_pdfexport') {
+            grid.pdfExport();
+        }
+        if (args.item.id === 'OrdersGrid_excelexport') {
+            grid.excelExport();
+        }
+    }
+</script>

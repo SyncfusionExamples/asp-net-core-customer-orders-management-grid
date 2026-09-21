@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Core Grid App</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+    <link href="_content/Syncfusion.AspNetCore.Themes/styles/fluent2.css" rel="stylesheet" />
+
+    <script src="_content/Syncfusion.AspNetCore.Grid/scripts/sf-grid.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+        <div>
+            <!-- Syncfusion ASP.NET Core Script Manager -->
+            <ejs-scripts></ejs-scripts>
+        </div>
+    </div>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

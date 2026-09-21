@@ -1,0 +1,270 @@
+html {
+    font-size: 14px;
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    margin-bottom: 60px;
+}
+
+main {
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+    color: var(--bs-secondary-color);
+    text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+    text-align: start;
+    transition: text-align 0.2s ease-in-out;
+}
+
+/* =============================================================
+   Page title (H1 above the feature list) — centered
+   ============================================================= */
+.grid-page-title {
+    margin: 0 auto 1.25rem auto;
+    padding: 0;
+    font-size: 2.25rem;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: #0f172a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+    max-width: 1200px;
+}
+
+.grid-page-subtitle {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #475569;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+/* =============================================================
+   Feature line — single-row chips above the grid
+   ============================================================= */
+.feature-line {
+    margin: 0 0 0.75rem 0;
+    padding: 0;
+    font-size: 0.92rem;
+    color: #334155;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    max-width: 1200px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+    .feature-line > strong {
+        font-weight: 700;
+        color: #0f172a;
+        margin-right: 4px;
+    }
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #ffffff;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+    transition: transform 0.15s ease, filter 0.15s ease;
+    white-space: nowrap;
+}
+
+    .chip:hover {
+        transform: translateY(-1px);
+        filter: brightness(1.06);
+    }
+
+.chip-filter {
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+}
+
+
+.chip-edit {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+}
+
+.chip-excel {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+}
+
+.chip-pdf {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+}
+
+/* Customize note — centered */
+.customize-note {
+    margin: 0 0 1rem 0;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    color: #475569;
+    background: #fffbeb;
+    border-left: 3px solid #f59e0b;
+    border-radius: 6px;
+    max-width: 1200px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* =============================================================
+   Grid wrapper — simple horizontal centering only.
+   Height and width are set directly on <ejs-grid> via its
+   `height="400"` and `width="800"` attributes, so no CSS overrides
+   for sizing are needed here.
+   ============================================================= */
+.grid-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 0.5rem;
+    box-sizing: border-box;
+}
+
+/* =============================================================
+   Attractive toolbar — per-action colors + bold text
+   ============================================================= */
+
+/* Base toolbar layout & spacing */
+#OrdersGrid .e-toolbar {
+    background: linear-gradient(90deg, #f8fafc 0%, #eef2ff 100%) !important;
+    padding: 8px 10px !important;
+    gap: 6px;
+}
+
+    #OrdersGrid .e-toolbar .e-toolbar-item {
+        margin: 0 2px !important;
+    }
+
+    /* Every toolbar button: rounded, bold, subtle shadow */
+    #OrdersGrid .e-toolbar .e-tbar-btn,
+    #OrdersGrid .e-toolbar .e-btn {
+        border-radius: 8px !important;
+        font-weight: 700 !important;
+        font-size: 0.82rem !important;
+        letter-spacing: 0.02em !important;
+        text-transform: uppercase !important;
+        color: #ffffff !important;
+        border: none !important;
+        box-shadow: 0 2px 4px rgba(15, 23, 42, 0.12) !important;
+        transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease !important;
+    }
+
+        #OrdersGrid .e-toolbar .e-tbar-btn:hover,
+        #OrdersGrid .e-toolbar .e-btn:hover {
+            transform: translateY(-1px);
+            filter: brightness(1.08);
+            box-shadow: 0 4px 10px rgba(15, 23, 42, 0.18) !important;
+        }
+
+/* Per-toolbar-item colors, scoped by the toolbar item id */
+#OrdersGrid #OrdersGrid_add {
+    background: #16a34a !important;
+}
+/* Add       */
+#OrdersGrid #OrdersGrid_edit {
+    background: #0099bc !important;
+}
+/* Edit    */
+#OrdersGrid #OrdersGrid_delete {
+    background: #eccd7e !important;
+}
+/* Delete   → red     */
+#OrdersGrid #OrdersGrid_update {
+    background: #0d9488 !important;
+}
+/* Update   → teal    */
+#OrdersGrid #OrdersGrid_cancel {
+    background: #475569 !important;
+}
+/* Cancel   → slate   */
+#OrdersGrid #OrdersGrid_excelexport {
+    background: #059669 !important;
+}
+/* Excel    → emerald */
+#OrdersGrid #OrdersGrid_pdfexport {
+    background: #b91c1c !important;
+}
+/* PDF      → red-700 */
+
+/* The default text the toolbar renders may be just an icon —
+   ensure the title attribute / text content is bold and legible. */
+#OrdersGrid .e-toolbar .e-tbar-btn-text,
+#OrdersGrid .e-toolbar .e-btn-text {
+    font-weight: 800 !important;
+}
+
+/* =============================================================
+   Column headers — bold + soft gradient
+   ============================================================= */
+#OrdersGrid .e-headercell {
+    background: linear-gradient(180deg, #f1f5f9 0%, #e2e8f0 100%) !important;
+    color: #0f172a !important;
+    font-weight: 800 !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.04em !important;
+    text-transform: uppercase;
+    border-bottom: 2px solid #6366f1 !important;
+}
+
+    #OrdersGrid .e-headercell .e-headertext {
+        font-weight: 800 !important;
+    }
+
+/* =============================================================
+   Cell backgrounds — soft zebra + subtle hover lift
+   ============================================================= */
+#OrdersGrid .e-row {
+    background: #ffffff !important;
+    transition: background 0.15s ease;
+}
+
+    #OrdersGrid .e-row.e-row-alt {
+        background: #f8fafc !important;
+    }
+
+    #OrdersGrid .e-row:hover {
+        background: #eef2ff !important;
+    }
+
+#OrdersGrid .e-cell {
+    border-bottom: 1px solid #f1f5f9 !important;
+    font-size: 0.9rem;
+}
+
+/* Left border accent on the first cell of each row, signalling status */
+#OrdersGrid .e-row .e-cell:first-child {
+    border-left: 4px solid transparent;
+}
