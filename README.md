@@ -20,7 +20,7 @@ This sample demonstrates how to build a customer orders management view in an AS
 [](https://github.com/SyncfusionExamples/asp-net-core-customer-orders-management-grid#prerequisites)
 
 - .NET 10.0 SDK
-- Visual Studio 2026 or Visual Studio Code
+- Visual Studio 2026, Visual Studio Code, or any preferred IDE
 
 ## How to Run the Project
 [](https://github.com/SyncfusionExamples/asp-net-core-customer-orders-management-grid#how-to-run-the-project)
