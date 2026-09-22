@@ -15,6 +15,8 @@ html {
 body {
     margin: 0;
     margin-bottom: 60px;
+    min-height: 100%;
+    height: 100%;
 }
 
 main {
@@ -111,7 +113,6 @@ main {
     background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
 }
 
-
 .chip-edit {
     background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
 }
@@ -193,13 +194,13 @@ main {
 #OrdersGrid #OrdersGrid_add {
     background: #16a34a !important;
 }
-/* Add       */
+/* Add      */
 #OrdersGrid #OrdersGrid_edit {
-    background: #0099bc !important;
+    background: #57ccd3 !important;
 }
-/* Edit    */
+/* Edit     → blue    */
 #OrdersGrid #OrdersGrid_delete {
-    background: #eccd7e !important;
+    background: #dc2626 !important;
 }
 /* Delete   → red     */
 #OrdersGrid #OrdersGrid_update {
@@ -267,4 +268,181 @@ main {
 /* Left border accent on the first cell of each row, signalling status */
 #OrdersGrid .e-row .e-cell:first-child {
     border-left: 4px solid transparent;
+}
+
+/* =============================================================
+   Grid container — let the EJ2 Grid fluidly fill its wrapper.
+   Remove the fixed pixel width that the ejs-grid tag applies.
+   ============================================================= */
+#OrdersGrid {
+    width: 100% !important;
+    max-width: 100%;
+}
+
+/* =============================================================
+   Responsive breakpoints
+   - mobile : <= 600px
+   - tablet : 601px – 900px
+   - desktop: >  900px
+   ============================================================= */
+
+/* ---------- Common fluid adjustments (all sizes) ---------- */
+.grid-page-title {
+    font-size: clamp(1.4rem, 4vw, 2.25rem);
+}
+
+.feature-line {
+    font-size: 0.85rem;
+}
+
+/* =============================================================
+   TABLET — 601px to 900px
+   ============================================================= */
+@media (min-width: 601px) and (max-width: 900px) {
+    html {
+        font-size: 13px;
+    }
+
+    .grid-page-title {
+        font-size: 1.75rem;
+        margin-bottom: 0.85rem;
+    }
+
+    .grid-page-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .grid-wrapper {
+        padding: 0.5rem 0.75rem 0;
+    }
+
+    /* Wrap chips onto two rows if needed */
+    .feature-line {
+        gap: 6px;
+        padding: 0 0.5rem;
+    }
+
+    .chip {
+        padding: 3px 10px;
+        font-size: 0.78rem;
+    }
+
+    .customize-note {
+        font-size: 0.8rem;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+
+    /* Toolbar — slightly tighter */
+    #OrdersGrid .e-toolbar {
+        padding: 6px 6px !important;
+        gap: 4px;
+    }
+
+        #OrdersGrid .e-toolbar .e-tbar-btn,
+        #OrdersGrid .e-toolbar .e-btn {
+            font-size: 0.72rem !important;
+            padding: 4px 8px !important;
+        }
+
+    #OrdersGrid .e-headercell {
+        font-size: 0.78rem !important;
+    }
+}
+
+/* =============================================================
+   MOBILE — up to 600px
+   ============================================================= */
+@media (max-width: 600px) {
+    html {
+        font-size: 12px;
+    }
+
+    main {
+        padding: 0.5rem;
+    }
+
+    .grid-page-title {
+        font-size: 1.35rem;
+        margin-bottom: 0.6rem;
+        gap: 4px;
+    }
+
+    .grid-page-subtitle {
+        font-size: 0.85rem;
+    }
+
+    /* Stack chips vertically so the long feature list doesn't overflow */
+    .feature-line {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        padding: 0 0.25rem;
+    }
+
+        .feature-line > strong {
+            margin-right: 0;
+            margin-bottom: 2px;
+            text-align: center;
+        }
+
+    .chip {
+        justify-content: center;
+        padding: 6px 10px;
+        font-size: 0.78rem;
+    }
+
+    .customize-note {
+        font-size: 0.78rem;
+        padding: 6px 10px;
+        margin-left: 0.25rem;
+        margin-right: 0.25rem;
+    }
+
+    .grid-wrapper {
+        padding: 0.25rem 0.25rem 0;
+    }
+
+    /* Toolbar — compact and readable */
+    #OrdersGrid .e-toolbar {
+        padding: 5px 4px !important;
+        gap: 3px;
+        border-radius: 8px 8px 0 0 !important;
+    }
+
+        #OrdersGrid .e-toolbar .e-toolbar-items {
+            flex-wrap: wrap !important;
+        }
+
+        #OrdersGrid .e-toolbar .e-tbar-btn,
+        #OrdersGrid .e-toolbar .e-btn {
+            font-size: 0.68rem !important;
+            padding: 4px 6px !important;
+            letter-spacing: 0 !important;
+            border-radius: 6px !important;
+            margin: 1px !important;
+        }
+
+    /* Headers — smaller and tighter to give cells more room */
+    #OrdersGrid .e-headercell {
+        font-size: 0.7rem !important;
+        padding: 4px 3px !important;
+        letter-spacing: 0.02em !important;
+    }
+
+    /* Allow horizontal scroll inside the grid only when columns
+       exceed the viewport — keeps the page itself overflow-clean. */
+    #OrdersGrid .e-gridcontent {
+        overflow-x: auto;
+    }
+}
+
+/* =============================================================
+   DESKTOP — above 900px
+   ============================================================= */
+@media (min-width: 901px) {
+    .grid-wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 }
