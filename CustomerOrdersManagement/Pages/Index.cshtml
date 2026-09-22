@@ -30,14 +30,14 @@
         <e-grid-filtersettings type="FilterBar"></e-grid-filtersettings>
         <e-grid-editSettings allowAdding="true" allowEditing="true" allowDeleting="true" mode="Normal"></e-grid-editSettings>
         <e-grid-columns>
-            <e-grid-column field="OrderID"      headerText="ID"           isPrimaryKey="true" minWidth="80"  width="100"  textAlign="Center"></e-grid-column>
-            <e-grid-column field="CustomerName" headerText="Customer"     minWidth="90" width="100" validationRules="@(new { required = true })"></e-grid-column>
-            <e-grid-column field="Product"      headerText="Product"      minWidth="80" width="100"></e-grid-column>
-            <e-grid-column field="Quantity"     headerText="Qty"          minWidth="90"  width="100" editType="NumericTextBox" textAlign="Right"></e-grid-column>
-            <e-grid-column field="Price" headerText="Unit Price" minWidth="90" width="100" format="C2" editType="NumericTextBox" textAlign="Right"></e-grid-column>
-            <e-grid-column field="TotalAmount" headerText="Total" minWidth="90" width="100" format="C2" textAlign="Right" allowEditing="false"></e-grid-column>
-            <e-grid-column field="OrderDate" headerText="Order Date" minWidth="90" width="100" format="yMd" type="Date" editType="DatePicker" textAlign="Center"></e-grid-column>
-            <e-grid-column field="Status" headerText="Status" minWidth="90" width="100" editType="DropdownEdit" textAlign="Center"></e-grid-column>
+          <e-grid-column field="OrderID"      headerText="ID"           isPrimaryKey="true" minWidth="80"  width="100"  textAlign="Center"></e-grid-column>
+          <e-grid-column field="CustomerName" headerText="Customer"     minWidth="90" width="100" validationRules="@(new { required = true })"></e-grid-column>
+          <e-grid-column field="Product"      headerText="Product"      minWidth="80" width="100"></e-grid-column>
+          <e-grid-column field="Quantity" headerText="Qty" minWidth="90" width="100" editType="numericedit" textAlign="Right"></e-grid-column>
+          <e-grid-column field="Price" headerText="Unit Price" minWidth="90" width="100" format="C2" editType="numericedit" textAlign="Right"></e-grid-column>
+          <e-grid-column field="TotalAmount" headerText="Total" minWidth="90" width="100" format="C2" editType="numericedit" textAlign="Right"></e-grid-column>
+          <e-grid-column field="OrderDate" headerText="Order Date" minWidth="90" width="100" format="yMd" type="Date" editType="datepickeredit" textAlign="Center"></e-grid-column>
+          <e-grid-column field="Status" headerText="Status" minWidth="90" width="100" editType="dropdownedit" textAlign="Center"></e-grid-column>
         </e-grid-columns>
     </ejs-grid>
 </div>
