@@ -13,7 +13,6 @@ This sample demonstrates how to build a customer orders management view in an AS
 - Enables filter bar filtering to quickly narrow down orders by any column.
 - Provides inline editing with `Add`, `Edit`, `Delete`, `Update`, and `Cancel` toolbar commands, with `OrderID` set as the primary key column.
 - Exports grid data to Excel and PDF using the built-in `ExcelExport` and `PdfExport` toolbar items.
-- Uses a strongly typed `Order` model with data-annotation validation, a computed **Total Amount** column (`Quantity × Price`), currency (`C2`) and date (`yMd`) column formats, and a dropdown editor for order status.
 - References the `Syncfusion.AspNetCore.Grid` and `Syncfusion.AspNetCore.Themes` NuGet packages, with Syncfusion tag helpers registered in `Pages/_ViewImports.cshtml` and the Fluent theme, Grid script, and `ejs-scripts` manager wired up in the shared layout.
 
 ## Prerequisites
